@@ -30,9 +30,6 @@ class HomePage extends StatelessWidget {
               isDismissible: true,
               duration: Duration(seconds: 2),
               animationDuration: Duration(milliseconds: 1500),
-              
-
-
             );
           },
           child: Text('Click me'),
