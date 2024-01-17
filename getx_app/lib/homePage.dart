@@ -13,23 +13,32 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Get.snackbar(
-              'Hi',
-              'Hello GetX',
-              snackPosition: SnackPosition.BOTTOM,
-              showProgressIndicator: true,
-              backgroundColor: Colors.green,
-              colorText: Colors.white,
-              borderRadius: 2,
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.all(5),
-              icon: Icon(
-                Icons.add_circle_outline,
-                color: Colors.red,
+            Get.defaultDialog(
+              title: 'Delete Alert',
+              titlePadding: EdgeInsets.all(10),
+              titleStyle: TextStyle(
+                color: Colors.black,
               ),
-              isDismissible: true,
-              duration: Duration(seconds: 2),
-              animationDuration: Duration(milliseconds: 1500),
+              middleText: 'Once Delete, you can\'t get back!',
+              middleTextStyle: TextStyle(color: Colors.white),
+              backgroundColor: Colors.green,
+              radius: 4,
+              textConfirm: 'Confirm',
+              textCancel: 'Not Now',
+              cancelTextColor: Colors.white,
+              confirmTextColor: Colors.white,
+              onCancel: () => {Get.back(closeOverlays: true)},
+              onConfirm: () => {Get.back(closeOverlays: true)},
+              barrierDismissible: false,
+
+              content: Column(
+                children: [
+                  Text('Hello 1'),
+                  Text('Hello 2'),
+                  Text('Hello 3'),
+                  Text('Hello 4'),
+                ],
+              ),
             );
           },
           child: Text('Click me'),
